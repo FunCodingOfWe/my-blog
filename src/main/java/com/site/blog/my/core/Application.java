@@ -12,8 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @MapperScan("com.site.blog.my.core.dao")
 @SpringBootApplication
-public class MyBlogApplication {
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(MyBlogApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
