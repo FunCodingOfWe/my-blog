@@ -51,7 +51,6 @@ public class BlogController {
         return ResultGenerator.genSuccessResult(blogService.getBlogsPage(pageUtil));
     }
 
-
     @GetMapping("/blogs")
     public String list(HttpServletRequest request) {
         request.setAttribute("path", "blogs");
