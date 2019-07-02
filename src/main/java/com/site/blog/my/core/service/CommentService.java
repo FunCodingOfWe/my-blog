@@ -1,8 +1,8 @@
 package com.site.blog.my.core.service;
 
-import com.site.blog.my.core.entity.BlogComment;
-import com.site.blog.my.core.util.PageQueryUtil;
-import com.site.blog.my.core.util.PageResult;
+import com.site.blog.my.core.domain.BlogComment;
+import com.site.blog.my.core.common.util.PageQueryUtil;
+import com.site.blog.my.core.common.util.PageResult;
 
 public interface CommentService {
     /**

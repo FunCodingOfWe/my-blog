@@ -1,11 +1,11 @@
 package com.site.blog.my.core.service.impl;
 
-import com.site.blog.my.core.dao.BlogCategoryMapper;
-import com.site.blog.my.core.dao.BlogMapper;
-import com.site.blog.my.core.entity.BlogCategory;
+import com.site.blog.my.core.mapper.BlogCategoryMapper;
+import com.site.blog.my.core.mapper.BlogMapper;
+import com.site.blog.my.core.domain.BlogCategory;
 import com.site.blog.my.core.service.CategoryService;
-import com.site.blog.my.core.util.PageQueryUtil;
-import com.site.blog.my.core.util.PageResult;
+import com.site.blog.my.core.common.util.PageQueryUtil;
+import com.site.blog.my.core.common.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

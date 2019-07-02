@@ -1,6 +1,6 @@
 package com.site.blog.my.core.service;
 
-import com.site.blog.my.core.entity.AdminUser;
+import com.site.blog.my.core.domain.AdminUser;
 
 public interface AdminUserService {
 

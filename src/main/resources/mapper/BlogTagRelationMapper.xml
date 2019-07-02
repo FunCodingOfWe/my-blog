@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.site.blog.my.core.dao.BlogTagRelationMapper">
-    <resultMap id="BaseResultMap" type="com.site.blog.my.core.entity.BlogTagRelation">
+<mapper namespace="com.site.blog.my.core.mapper.BlogTagRelationMapper">
+    <resultMap id="BaseResultMap" type="com.site.blog.my.core.domain.BlogTagRelation">
         <id column="relation_id" jdbcType="BIGINT" property="relationId"/>
         <result column="blog_id" jdbcType="BIGINT" property="blogId"/>
         <result column="tag_id" jdbcType="INTEGER" property="tagId"/>
@@ -42,13 +42,13 @@
         delete from tb_blog_tag_relation
         where blog_id = #{blogId,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" parameterType="com.site.blog.my.core.entity.BlogTagRelation">
+    <insert id="insert" parameterType="com.site.blog.my.core.domain.BlogTagRelation">
     insert into tb_blog_tag_relation (relation_id, blog_id, tag_id,
       create_time)
     values (#{relationId,jdbcType=BIGINT}, #{blogId,jdbcType=BIGINT}, #{tagId,jdbcType=INTEGER},
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" parameterType="com.site.blog.my.core.entity.BlogTagRelation">
+    <insert id="insertSelective" parameterType="com.site.blog.my.core.domain.BlogTagRelation">
         insert into tb_blog_tag_relation
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="relationId != null">
@@ -86,7 +86,7 @@
             (#{item.blogId,jdbcType=BIGINT},#{item.tagId,jdbcType=INTEGER})
         </foreach>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.entity.BlogTagRelation">
+    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.domain.BlogTagRelation">
         update tb_blog_tag_relation
         <set>
             <if test="blogId != null">
@@ -101,7 +101,7 @@
         </set>
         where relation_id = #{relationId,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.entity.BlogTagRelation">
+    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.domain.BlogTagRelation">
     update tb_blog_tag_relation
     set blog_id = #{blogId,jdbcType=BIGINT},
       tag_id = #{tagId,jdbcType=INTEGER},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.site.blog.my.core.dao.AdminUserMapper">
-  <resultMap id="BaseResultMap" type="com.site.blog.my.core.entity.AdminUser">
+<mapper namespace="com.site.blog.my.core.mapper.AdminUserMapper">
+  <resultMap id="BaseResultMap" type="com.site.blog.my.core.domain.AdminUser">
     <id column="admin_user_id" jdbcType="INTEGER" property="adminUserId" />
     <result column="login_user_name" jdbcType="VARCHAR" property="loginUserName" />
     <result column="login_password" jdbcType="VARCHAR" property="loginPassword" />
@@ -25,13 +25,13 @@
     from tb_admin_user
     where admin_user_id = #{adminUserId,jdbcType=INTEGER}
   </select>
-  <insert id="insert" parameterType="com.site.blog.my.core.entity.AdminUser">
-    insert into tb_admin_user (admin_user_id, login_user_name, login_password, 
+  <insert id="insert" parameterType="com.site.blog.my.core.domain.AdminUser">
+    insert into tb_admin_user (admin_user_id, login_user_name, login_password,
       nick_name, locked)
-    values (#{adminUserId,jdbcType=INTEGER}, #{loginUserName,jdbcType=VARCHAR}, #{loginPassword,jdbcType=VARCHAR}, 
+    values (#{adminUserId,jdbcType=INTEGER}, #{loginUserName,jdbcType=VARCHAR}, #{loginPassword,jdbcType=VARCHAR},
       #{nickName,jdbcType=VARCHAR}, #{locked,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.site.blog.my.core.entity.AdminUser">
+  <insert id="insertSelective" parameterType="com.site.blog.my.core.domain.AdminUser">
     insert into tb_admin_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="adminUserId != null">
@@ -68,7 +68,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.entity.AdminUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.domain.AdminUser">
     update tb_admin_user
     <set>
       <if test="loginUserName != null">
@@ -86,7 +86,7 @@
     </set>
     where admin_user_id = #{adminUserId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.entity.AdminUser">
+  <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.domain.AdminUser">
     update tb_admin_user
     set login_user_name = #{loginUserName,jdbcType=VARCHAR},
       login_password = #{loginPassword,jdbcType=VARCHAR},

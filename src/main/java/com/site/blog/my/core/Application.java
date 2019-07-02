@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @email 2449207463@qq.com
  * @link http://13blog.site
  */
-@MapperScan("com.site.blog.my.core.dao")
+@MapperScan("com.site.blog.my.core.mapper")
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {

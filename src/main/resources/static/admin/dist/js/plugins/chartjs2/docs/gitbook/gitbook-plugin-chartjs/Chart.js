@@ -1442,11 +1442,11 @@ for (var func in conversions) {
   // export rgb2hsl and ["rgb"]["hsl"]
   convert[from] = convert[from] || {};
 
-  convert[from][to] = convert[func] = (function(func) { 
+  convert[from][to] = convert[func] = (function(func) {
     return function(arg) {
       if (typeof arg == "number")
         arg = Array.prototype.slice.call(arguments);
-      
+
       var val = conversions[func](arg);
       if (typeof val == "string" || val === undefined)
         return val; // keyword
@@ -1474,12 +1474,12 @@ Converter.prototype.routeSpace = function(space, args) {
    }
    // color.rgb(10, 10, 10)
    if (typeof values == "number") {
-      values = Array.prototype.slice.call(args);        
+      values = Array.prototype.slice.call(args);
    }
 
    return this.setValues(space, values);
 };
-  
+
 /* Set the values for a space, invalidating cache */
 Converter.prototype.setValues = function(space, values) {
    this.space = space;
@@ -11992,7 +11992,7 @@ module.exports = function(Chart) {
 			var me = this;
 			me.labelDiffs = [];
 			var scaleLabelDiffs = [];
-			// Parse common labels once
+			// Parse controller labels once
 			if (me.chart.data.labels && me.chart.data.labels.length > 0) {
 				helpers.each(me.chart.data.labels, function(label) {
 					var labelMoment = me.parseTime(label);
@@ -12021,7 +12021,7 @@ module.exports = function(Chart) {
 						}
 					}, me);
 				} else {
-					// We have no labels. Use common ones
+					// We have no labels. Use controller ones
 					diffsForDataset = scaleLabelDiffs;
 				}
 

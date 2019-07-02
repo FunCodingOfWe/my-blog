@@ -1,10 +1,10 @@
 package com.site.blog.my.core.controller.admin;
 
-import com.site.blog.my.core.entity.BlogLink;
+import com.site.blog.my.core.domain.BlogLink;
 import com.site.blog.my.core.service.LinkService;
-import com.site.blog.my.core.util.PageQueryUtil;
-import com.site.blog.my.core.util.Result;
-import com.site.blog.my.core.util.ResultGenerator;
+import com.site.blog.my.core.common.util.PageQueryUtil;
+import com.site.blog.my.core.common.util.Result;
+import com.site.blog.my.core.common.util.ResultGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;

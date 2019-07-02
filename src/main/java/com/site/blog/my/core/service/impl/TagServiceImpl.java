@@ -1,13 +1,12 @@
 package com.site.blog.my.core.service.impl;
 
-import com.site.blog.my.core.dao.BlogTagMapper;
-import com.site.blog.my.core.dao.BlogTagRelationMapper;
-import com.site.blog.my.core.entity.BlogTag;
-import com.site.blog.my.core.entity.BlogTagCount;
-import com.site.blog.my.core.entity.BlogTagRelation;
+import com.site.blog.my.core.mapper.BlogTagMapper;
+import com.site.blog.my.core.mapper.BlogTagRelationMapper;
+import com.site.blog.my.core.domain.BlogTag;
+import com.site.blog.my.core.domain.BlogTagCount;
 import com.site.blog.my.core.service.TagService;
-import com.site.blog.my.core.util.PageQueryUtil;
-import com.site.blog.my.core.util.PageResult;
+import com.site.blog.my.core.common.util.PageQueryUtil;
+import com.site.blog.my.core.common.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;

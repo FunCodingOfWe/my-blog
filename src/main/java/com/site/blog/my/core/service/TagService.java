@@ -1,8 +1,8 @@
 package com.site.blog.my.core.service;
 
-import com.site.blog.my.core.entity.BlogTagCount;
-import com.site.blog.my.core.util.PageQueryUtil;
-import com.site.blog.my.core.util.PageResult;
+import com.site.blog.my.core.domain.BlogTagCount;
+import com.site.blog.my.core.common.util.PageQueryUtil;
+import com.site.blog.my.core.common.util.PageResult;
 
 import java.util.List;
 

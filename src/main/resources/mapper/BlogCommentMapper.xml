@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.site.blog.my.core.dao.BlogCommentMapper">
-    <resultMap id="BaseResultMap" type="com.site.blog.my.core.entity.BlogComment">
+<mapper namespace="com.site.blog.my.core.mapper.BlogCommentMapper">
+    <resultMap id="BaseResultMap" type="com.site.blog.my.core.domain.BlogComment">
         <id column="comment_id" jdbcType="BIGINT" property="commentId"/>
         <result column="blog_id" jdbcType="BIGINT" property="blogId"/>
         <result column="commentator" jdbcType="VARCHAR" property="commentator"/>
@@ -16,7 +16,7 @@
         <result column="is_deleted" jdbcType="TINYINT" property="isDeleted"/>
     </resultMap>
     <sql id="Base_Column_List">
-    comment_id, blog_id, commentator, email, website_url, comment_body, comment_create_time, 
+    comment_id, blog_id, commentator, email, website_url, comment_body, comment_create_time,
     commentator_ip, reply_body, reply_create_time, comment_status, is_deleted
   </sql>
     <select id="findBlogCommentList" parameterType="Map" resultMap="BaseResultMap">
@@ -71,19 +71,19 @@
             #{id}
         </foreach>
     </update>
-    <insert id="insert" parameterType="com.site.blog.my.core.entity.BlogComment">
-    insert into tb_blog_comment (comment_id, blog_id, commentator, 
-      email, website_url, comment_body, 
-      comment_create_time, commentator_ip, reply_body, 
+    <insert id="insert" parameterType="com.site.blog.my.core.domain.BlogComment">
+    insert into tb_blog_comment (comment_id, blog_id, commentator,
+      email, website_url, comment_body,
+      comment_create_time, commentator_ip, reply_body,
       reply_create_time, comment_status, is_deleted
       )
-    values (#{commentId,jdbcType=BIGINT}, #{blogId,jdbcType=BIGINT}, #{commentator,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{websiteUrl,jdbcType=VARCHAR}, #{commentBody,jdbcType=VARCHAR}, 
-      #{commentCreateTime,jdbcType=TIMESTAMP}, #{commentatorIp,jdbcType=VARCHAR}, #{replyBody,jdbcType=VARCHAR}, 
+    values (#{commentId,jdbcType=BIGINT}, #{blogId,jdbcType=BIGINT}, #{commentator,jdbcType=VARCHAR},
+      #{email,jdbcType=VARCHAR}, #{websiteUrl,jdbcType=VARCHAR}, #{commentBody,jdbcType=VARCHAR},
+      #{commentCreateTime,jdbcType=TIMESTAMP}, #{commentatorIp,jdbcType=VARCHAR}, #{replyBody,jdbcType=VARCHAR},
       #{replyCreateTime,jdbcType=TIMESTAMP}, #{commentStatus,jdbcType=TINYINT}, #{isDeleted,jdbcType=TINYINT}
       )
   </insert>
-    <insert id="insertSelective" parameterType="com.site.blog.my.core.entity.BlogComment">
+    <insert id="insertSelective" parameterType="com.site.blog.my.core.domain.BlogComment">
         insert into tb_blog_comment
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="commentId != null">
@@ -162,7 +162,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.entity.BlogComment">
+    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.domain.BlogComment">
         update tb_blog_comment
         <set>
             <if test="blogId != null">
@@ -201,7 +201,7 @@
         </set>
         where comment_id = #{commentId,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.entity.BlogComment">
+    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.domain.BlogComment">
     update tb_blog_comment
     set blog_id = #{blogId,jdbcType=BIGINT},
       commentator = #{commentator,jdbcType=VARCHAR},

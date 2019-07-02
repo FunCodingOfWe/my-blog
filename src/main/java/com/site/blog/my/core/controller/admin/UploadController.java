@@ -1,9 +1,9 @@
 package com.site.blog.my.core.controller.admin;
 
-import com.site.blog.my.core.config.Constants;
-import com.site.blog.my.core.util.MyBlogUtils;
-import com.site.blog.my.core.util.Result;
-import com.site.blog.my.core.util.ResultGenerator;
+import com.site.blog.my.core.common.config.Constants;
+import com.site.blog.my.core.common.util.MyBlogUtils;
+import com.site.blog.my.core.common.util.Result;
+import com.site.blog.my.core.common.util.ResultGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +18,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
 import java.util.Random;
-import java.util.UUID;
 
 /**
  * @author 13

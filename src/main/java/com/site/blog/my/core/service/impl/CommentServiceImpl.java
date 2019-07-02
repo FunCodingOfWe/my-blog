@@ -1,10 +1,10 @@
 package com.site.blog.my.core.service.impl;
 
-import com.site.blog.my.core.dao.BlogCommentMapper;
-import com.site.blog.my.core.entity.BlogComment;
+import com.site.blog.my.core.mapper.BlogCommentMapper;
+import com.site.blog.my.core.domain.BlogComment;
 import com.site.blog.my.core.service.CommentService;
-import com.site.blog.my.core.util.PageQueryUtil;
-import com.site.blog.my.core.util.PageResult;
+import com.site.blog.my.core.common.util.PageQueryUtil;
+import com.site.blog.my.core.common.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;

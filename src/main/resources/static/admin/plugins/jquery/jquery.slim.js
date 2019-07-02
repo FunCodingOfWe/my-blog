@@ -41,7 +41,7 @@
 
 // Edge <= 12 - 13+, Firefox <=18 - 45+, IE 10 - 11, Safari 5.1 - 9+, iOS 6 - 9.1
 // throw exceptions when non-strict code (e.g., ASP.NET 4.5) accesses strict mode
-// arguments.callee.caller (trac-13335). But as of jQuery 3.0 (2016), strict mode should be common
+// arguments.callee.caller (trac-13335). But as of jQuery 3.0 (2016), strict mode should be controller
 // enough that all such attempts are guarded in a try block.
 "use strict";
 
@@ -1458,7 +1458,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		}
 
 		return i ?
-			// Do a sibling check if the nodes have a common ancestor
+			// Do a sibling check if the nodes have a controller ancestor
 			siblingCheck( ap[i], bp[i] ) :
 
 			// Otherwise nodes in our document sort first
@@ -2027,7 +2027,7 @@ Expr = Sizzle.selectors = {
 		// Contents
 		"empty": function( elem ) {
 			// http://www.w3.org/TR/selectors/#empty-pseudo
-			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; domain ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -5444,7 +5444,7 @@ jQuery.Event.prototype = {
 	}
 };
 
-// Includes all common event props including KeyEvent and MouseEvent specific props
+// Includes all controller event props including KeyEvent and MouseEvent specific props
 jQuery.each( {
 	altKey: true,
 	bubbles: true,
@@ -7192,7 +7192,7 @@ jQuery.fn.extend( {
 
 				ret = elem.value;
 
-				// Handle most common string cases
+				// Handle most controller string cases
 				if ( typeof ret === "string" ) {
 					return ret.replace( rreturn, "" );
 				}

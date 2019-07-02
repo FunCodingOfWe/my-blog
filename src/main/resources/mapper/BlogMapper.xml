@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.site.blog.my.core.dao.BlogMapper">
-    <resultMap id="BaseResultMap" type="com.site.blog.my.core.entity.Blog">
+<mapper namespace="com.site.blog.my.core.mapper.BlogMapper">
+    <resultMap id="BaseResultMap" type="com.site.blog.my.core.domain.Blog">
         <id column="blog_id" jdbcType="BIGINT" property="blogId"/>
         <result column="blog_title" jdbcType="VARCHAR" property="blogTitle"/>
         <result column="blog_sub_url" jdbcType="VARCHAR" property="blogSubUrl"/>
@@ -16,11 +16,11 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
     </resultMap>
-    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.site.blog.my.core.entity.Blog">
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.site.blog.my.core.domain.Blog">
         <result column="blog_content" jdbcType="LONGVARCHAR" property="blogContent"/>
     </resultMap>
     <sql id="Base_Column_List">
-    blog_id, blog_title, blog_sub_url, blog_cover_image, blog_category_id, blog_category_name, 
+    blog_id, blog_title, blog_sub_url, blog_cover_image, blog_category_id, blog_category_name,
     blog_tags, blog_status, blog_views, enable_comment, is_deleted, create_time, update_time
   </sql>
     <sql id="Blob_Column_List">
@@ -120,20 +120,20 @@
             #{id}
         </foreach>
     </update>
-    <insert id="insert" parameterType="com.site.blog.my.core.entity.Blog">
-    insert into tb_blog (blog_id, blog_title, blog_sub_url, 
-      blog_cover_image, blog_category_id, blog_category_name, 
-      blog_tags, blog_status, blog_views, 
-      enable_comment, is_deleted, create_time, 
+    <insert id="insert" parameterType="com.site.blog.my.core.domain.Blog">
+    insert into tb_blog (blog_id, blog_title, blog_sub_url,
+      blog_cover_image, blog_category_id, blog_category_name,
+      blog_tags, blog_status, blog_views,
+      enable_comment, is_deleted, create_time,
       update_time, blog_content)
-    values (#{blogId,jdbcType=BIGINT}, #{blogTitle,jdbcType=VARCHAR}, #{blogSubUrl,jdbcType=VARCHAR}, 
-      #{blogCoverImage,jdbcType=VARCHAR}, #{blogCategoryId,jdbcType=INTEGER}, #{blogCategoryName,jdbcType=VARCHAR}, 
-      #{blogTags,jdbcType=VARCHAR}, #{blogStatus,jdbcType=TINYINT}, #{blogViews,jdbcType=BIGINT}, 
-      #{enableComment,jdbcType=TINYINT}, #{isDeleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{blogId,jdbcType=BIGINT}, #{blogTitle,jdbcType=VARCHAR}, #{blogSubUrl,jdbcType=VARCHAR},
+      #{blogCoverImage,jdbcType=VARCHAR}, #{blogCategoryId,jdbcType=INTEGER}, #{blogCategoryName,jdbcType=VARCHAR},
+      #{blogTags,jdbcType=VARCHAR}, #{blogStatus,jdbcType=TINYINT}, #{blogViews,jdbcType=BIGINT},
+      #{enableComment,jdbcType=TINYINT}, #{isDeleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{blogContent,jdbcType=LONGVARCHAR})
   </insert>
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="blogId"
-            parameterType="com.site.blog.my.core.entity.Blog">
+            parameterType="com.site.blog.my.core.domain.Blog">
         insert into tb_blog
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="blogId != null">
@@ -224,7 +224,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.entity.Blog">
+    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.domain.Blog">
         update tb_blog
         <set>
             <if test="blogTitle != null">
@@ -272,7 +272,7 @@
         </set>
         where blog_id = #{blogId,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.site.blog.my.core.entity.Blog">
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.site.blog.my.core.domain.Blog">
     update tb_blog
     set blog_title = #{blogTitle,jdbcType=VARCHAR},
       blog_sub_url = #{blogSubUrl,jdbcType=VARCHAR},
@@ -289,7 +289,7 @@
       blog_content = #{blogContent,jdbcType=LONGVARCHAR}
     where blog_id = #{blogId,jdbcType=BIGINT}
   </update>
-    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.entity.Blog">
+    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.domain.Blog">
     update tb_blog
     set blog_title = #{blogTitle,jdbcType=VARCHAR},
       blog_sub_url = #{blogSubUrl,jdbcType=VARCHAR},

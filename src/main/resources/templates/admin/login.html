@@ -53,15 +53,15 @@
                     <input type="password" id="password" name="password" class="form-control" placeholder="请输入密码"
                            required="true">
                 </div>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" class="form-control" name="verifyCode" placeholder="请输入验证码" required="true">
-                    </div>
-                    <div class="col-6">
-                        <img alt="单击图片刷新！" class="pointer" th:src="@{/common/kaptcha}"
-                             onclick="this.src='/common/kaptcha?d='+new Date()*1">
-                    </div>
-                </div>
+                <!--<div class="row">-->
+                    <!--<div class="col-6">-->
+                        <!--<input type="text" class="form-control" name="verifyCode" placeholder="请输入验证码" required="true">-->
+                    <!--</div>-->
+                    <!--<div class="col-6">-->
+                        <!--<img alt="单击图片刷新！" class="pointer" th:src="@{/common/kaptcha}"-->
+                             <!--onclick="this.src='/common/kaptcha?d='+new Date()*1">-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class="form-group has-feedback"></div>
                 <div class="row">
                     <div class="col-8">
@@ -83,7 +83,7 @@
 <script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>
 <!-- Bootstrap 4 -->
 <script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
-<script th:src="@{/admin/dist/js/plugins/particles.js}"></script>
-<script th:src="@{/admin/dist/js/plugins/login-bg-particles.js}"></script>
+<!--<script th:src="@{/admin/dist/js/plugins/particles.js}"></script>-->
+<!--<script th:src="@{/admin/dist/js/plugins/login-bg-particles.js}"></script>-->
 </body>
 </html>

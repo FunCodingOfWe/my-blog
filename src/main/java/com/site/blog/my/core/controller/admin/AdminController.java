@@ -1,6 +1,6 @@
 package com.site.blog.my.core.controller.admin;
 
-import com.site.blog.my.core.entity.AdminUser;
+import com.site.blog.my.core.domain.AdminUser;
 import com.site.blog.my.core.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -73,26 +73,16 @@ public class AdminController {
      *
      * @param userName
      * @param password
-     * @param verifyCode
      * @param session
      * @return
      */
     @PostMapping(value = "/login")
     public String login(@RequestParam("userName") String userName,
                         @RequestParam("password") String password,
-                        @RequestParam("verifyCode") String verifyCode,
                         HttpSession session) {
-        if (StringUtils.isEmpty(verifyCode)) {
-            session.setAttribute("errorMsg", "验证码不能为空");
-            return "admin/login";
-        }
+
         if (StringUtils.isEmpty(userName) || StringUtils.isEmpty(password)) {
             session.setAttribute("errorMsg", "用户名或密码不能为空");
-            return "admin/login";
-        }
-        String kaptchaCode = session.getAttribute("verifyCode") + "";
-        if (StringUtils.isEmpty(kaptchaCode) || !verifyCode.equals(kaptchaCode)) {
-            session.setAttribute("errorMsg", "验证码错误");
             return "admin/login";
         }
         AdminUser adminUser = adminUserService.login(userName, password);

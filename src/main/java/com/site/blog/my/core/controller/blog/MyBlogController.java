@@ -1,10 +1,10 @@
 package com.site.blog.my.core.controller.blog;
 
-import com.site.blog.my.core.controller.vo.BlogDetailVO;
-import com.site.blog.my.core.entity.BlogComment;
-import com.site.blog.my.core.entity.BlogLink;
+import com.site.blog.my.core.domain.vo.BlogDetailVO;
+import com.site.blog.my.core.domain.BlogComment;
+import com.site.blog.my.core.domain.BlogLink;
 import com.site.blog.my.core.service.*;
-import com.site.blog.my.core.util.*;
+import com.site.blog.my.core.common.util.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;

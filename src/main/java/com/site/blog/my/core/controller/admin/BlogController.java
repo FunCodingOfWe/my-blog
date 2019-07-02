@@ -1,13 +1,13 @@
 package com.site.blog.my.core.controller.admin;
 
-import com.site.blog.my.core.config.Constants;
-import com.site.blog.my.core.entity.Blog;
+import com.site.blog.my.core.common.config.Constants;
+import com.site.blog.my.core.domain.Blog;
 import com.site.blog.my.core.service.BlogService;
 import com.site.blog.my.core.service.CategoryService;
-import com.site.blog.my.core.util.MyBlogUtils;
-import com.site.blog.my.core.util.PageQueryUtil;
-import com.site.blog.my.core.util.Result;
-import com.site.blog.my.core.util.ResultGenerator;
+import com.site.blog.my.core.common.util.MyBlogUtils;
+import com.site.blog.my.core.common.util.PageQueryUtil;
+import com.site.blog.my.core.common.util.Result;
+import com.site.blog.my.core.common.util.ResultGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;

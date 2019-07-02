@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.site.blog.my.core.dao.BlogLinkMapper">
-    <resultMap id="BaseResultMap" type="com.site.blog.my.core.entity.BlogLink">
+<mapper namespace="com.site.blog.my.core.mapper.BlogLinkMapper">
+    <resultMap id="BaseResultMap" type="com.site.blog.my.core.domain.BlogLink">
         <id column="link_id" jdbcType="INTEGER" property="linkId"/>
         <result column="link_type" jdbcType="TINYINT" property="linkType"/>
         <result column="link_name" jdbcType="VARCHAR" property="linkName"/>
@@ -12,7 +12,7 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
     <sql id="Base_Column_List">
-    link_id, link_type, link_name, link_url, link_description, link_rank, is_deleted, 
+    link_id, link_type, link_name, link_url, link_description, link_rank, is_deleted,
     create_time
   </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -51,15 +51,15 @@
         where is_deleted=0
     </select>
 
-    <insert id="insert" parameterType="com.site.blog.my.core.entity.BlogLink">
-    insert into tb_link (link_id, link_type, link_name, 
-      link_url, link_description, link_rank, 
+    <insert id="insert" parameterType="com.site.blog.my.core.domain.BlogLink">
+    insert into tb_link (link_id, link_type, link_name,
+      link_url, link_description, link_rank,
       is_deleted, create_time)
-    values (#{linkId,jdbcType=INTEGER}, #{linkType,jdbcType=TINYINT}, #{linkName,jdbcType=VARCHAR}, 
-      #{linkUrl,jdbcType=VARCHAR}, #{linkDescription,jdbcType=VARCHAR}, #{linkRank,jdbcType=INTEGER}, 
+    values (#{linkId,jdbcType=INTEGER}, #{linkType,jdbcType=TINYINT}, #{linkName,jdbcType=VARCHAR},
+      #{linkUrl,jdbcType=VARCHAR}, #{linkDescription,jdbcType=VARCHAR}, #{linkRank,jdbcType=INTEGER},
       #{isDeleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" parameterType="com.site.blog.my.core.entity.BlogLink">
+    <insert id="insertSelective" parameterType="com.site.blog.my.core.domain.BlogLink">
         insert into tb_link
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="linkId != null">
@@ -114,7 +114,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.entity.BlogLink">
+    <update id="updateByPrimaryKeySelective" parameterType="com.site.blog.my.core.domain.BlogLink">
         update tb_link
         <set>
             <if test="linkType != null">
@@ -141,7 +141,7 @@
         </set>
         where link_id = #{linkId,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.entity.BlogLink">
+    <update id="updateByPrimaryKey" parameterType="com.site.blog.my.core.domain.BlogLink">
     update tb_link
     set link_type = #{linkType,jdbcType=TINYINT},
       link_name = #{linkName,jdbcType=VARCHAR},
