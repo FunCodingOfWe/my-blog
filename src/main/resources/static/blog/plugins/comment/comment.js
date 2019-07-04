@@ -23,12 +23,12 @@ $('#commentSubmit').click(function () {
         });
         return;
     }
-    if (isNull(verifyCode)) {
-        swal("请输入验证码", {
-            icon: "warning",
-        });
-        return;
-    }
+    // if (isNull(verifyCode)) {
+    //     swal("请输入验证码", {
+    //         icon: "warning",
+    //     });
+    //     return;
+    // }
     if (!validCN_ENString2_100(commentator)) {
         swal("请输入符合规范的名称(不要输入特殊字符)", {
             icon: "warning",
