@@ -27,32 +27,6 @@ My Blog 是由 SpringBoot + Mybatis + Thymeleaf 等技术实现的 Java 博客�
 
 ## 效果预览
 
-### 后台管理页面
-
-- 登录页
-
-	![login](static-files/login.png)
-
-- 后台首页
-
-	![dashboard](static-files/dashboard.png)
-
-- 文章管理
-
-	![blog-list](static-files/blog-list.png)
-
-- 文章编辑
-
-	![edit](static-files/edit.png)
-
-- 评论管理
-
-	![comment-list](static-files/comment-list.png)
-
-- 系统配置
-
-	![config](static-files/config.png)
-
 ### 博客展示页面
 
 开发时，在项目中**内置了三套博客主题模板，主题风格各有千秋**，效果如下：
