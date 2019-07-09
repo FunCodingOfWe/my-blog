@@ -27,7 +27,7 @@ public class MyBlogController {
 
     //public static String theme = "default";
     //public static String theme = "yummy-jekyll";
-    @Value("${theme}")
+    @Value("${blog.theme}")
     public  String theme ;
     @Resource
     private BlogService blogService;
