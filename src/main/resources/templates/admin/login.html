@@ -6,37 +6,35 @@
         <title>Duke 的个人博客</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" th:href="@{/admin/dist/img/favicon.png}"/>
+        <link rel="stylesheet" th:href="@{/admin/plugins/bootstrap/css/bootstrap3.3.7.min.css}">
         <link rel="stylesheet" th:href="@{/admin/dist/css/adminlte.min.css}">
     </head>
     <body class="hold-transition login-page">
         <div class="login-box">
-            <div class="login-logo" style="color: #007bff;">
-                <h1>Duke Blog</h1>
+            <div class="login-logo">
+                <a href="/"><b>Duke</b> Blog</a>
             </div>
-            <div class="card">
-                <div class="card-body login-card-body">
-                    <p class="login-box-msg">Duke 的个人博客</p>
-                    <form th:action="@{/admin/login}" method="post">
-                        <div th:if="${not #strings.isEmpty(session.errorMsg)}" class="form-group">
-                            <div class="alert alert-danger" th:text="${session.errorMsg}"></div>
+            <div class="login-box-body">
+                <p class="login-box-msg">代码改变世界，双手创造未来</p>
+                <form th:action="@{/admin/login}" method="post">
+                    <div th:if="${not #strings.isEmpty(session.errorMsg)}" class="form-group">
+                        <div class="alert alert-danger" th:text="${session.errorMsg}"></div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="text" id="userName" name="userName" class="form-control" placeholder="账号" required="true">
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="密码" required="true">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-8"></div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
                         </div>
-                        <div class="form-group has-feedback">
-                            <!--<span class="fa fa-user form-control-feedback"></span>-->
-                            <input type="text" id="userName" name="userName" class="form-control" placeholder="账号" required="true">
-                        </div>
-                        <div class="form-group has-feedback">
-                            <!--<span class="fa fa-lock form-control-feedback"></span>-->
-                            <input type="password" id="password" name="password" class="form-control" placeholder="密码" required="true">
-                        </div>
-                        <div class="form-group has-feedback"></div>
-                        <div class="row">
-                            <div class="col-8"></div>
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </body>
