@@ -79,7 +79,8 @@ public class AdminController {
     @PostMapping(value = "/login")
     public String login(@RequestParam("userName") String userName,
                         @RequestParam("password") String password,
-                        HttpSession session) {
+                        HttpSession session,
+                        HttpServletRequest request) {
 
         if (StringUtils.isEmpty(userName) || StringUtils.isEmpty(password)) {
             session.setAttribute("errorMsg", "用户名或密码不能为空");
@@ -94,6 +95,9 @@ public class AdminController {
             return "redirect:/admin/index";
         } else {
             session.setAttribute("errorMsg", "用户名或密码不正确");
+            request.setAttribute("userName", userName);
+            request.setAttribute("password", password);
+
             return "admin/login";
         }
     }
