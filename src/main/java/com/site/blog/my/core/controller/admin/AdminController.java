@@ -93,7 +93,7 @@ public class AdminController {
             //session.setMaxInactiveInterval(60 * 60 * 2);
             return "redirect:/admin/index";
         } else {
-            session.setAttribute("errorMsg", "登陆失败");
+            session.setAttribute("errorMsg", "用户名或密码不正确");
             return "admin/login";
         }
     }
