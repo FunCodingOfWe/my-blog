@@ -19,10 +19,10 @@ public class ConfigServiceImpl implements ConfigService {
 
     public static final String websiteName = "personal blog";
     public static final String websiteDescription = "personal blog是SpringBoot2+Thymeleaf+Mybatis建造的个人博客网站.SpringBoot实战博客源码.个人博客搭建";
-    public static final String websiteLogo = "/admin/dist/img/logo2.png";
-    public static final String websiteIcon = "/admin/dist/img/favicon.png";
+    public static final String websiteLogo = "/admin/img/logo2.png";
+    public static final String websiteIcon = "/admin/img/favicon.png";
 
-    public static final String yourAvatar = "/admin/dist/img/13.png";
+    public static final String yourAvatar = "/admin/img/favicon.png";
     public static final String yourEmail = "2449207463@qq.com";
     public static final String yourName = "十三";
 

@@ -316,7 +316,7 @@ public class BlogServiceImpl implements BlogService {
                 blogCategory = new BlogCategory();
                 blogCategory.setCategoryId(0);
                 blogCategory.setCategoryName("默认分类");
-                blogCategory.setCategoryIcon("/admin/dist/img/category/00.png");
+                blogCategory.setCategoryIcon("/admin/img/category/00.png");
             }
             //分类信息
             blogDetailVO.setBlogCategoryIcon(blogCategory.getCategoryIcon());
@@ -354,7 +354,7 @@ public class BlogServiceImpl implements BlogService {
                 } else {
                     blogListVO.setBlogCategoryId(0);
                     blogListVO.setBlogCategoryName("默认分类");
-                    blogListVO.setBlogCategoryIcon("/admin/dist/img/category/00.png");
+                    blogListVO.setBlogCategoryIcon("/admin/img/category/00.png");
                 }
                 blogListVOS.add(blogListVO);
             }
