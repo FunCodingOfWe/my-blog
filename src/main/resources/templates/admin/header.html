@@ -7,7 +7,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link rel="shortcut icon" th:href="@{/admin/img/favicon.png}"/>
+    <link rel="shortcut icon" th:href="@{/admin/img/favicon.ico}"/>
     <link rel="stylesheet" th:href="@{/plugins/font-awesome/css/font-awesome.min.css}">
     <!-- Ionicons -->
     <link rel="stylesheet" th:href="@{/plugins/Ionicons/css/ionicons.min.css}">
@@ -23,7 +23,7 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+            <a class="nav-link" data-widget="pushmenu" th:href="@{/}"><i class="fa fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <p class="nav-link" th:text="${breadcrumb}"></p>
